@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smoki'BBQ Registration Page</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/form.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="chef-face">
+        <div class="hat">
+          <div class="hat-top"></div>
+          <div class="hat-brim"></div>
+        </div>
+        <div class="face">
+          <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+          <div class="smile"></div>
+        </div>
+        <div class="utensils">
+          <div class="utensil fork"></div>
+          <div class="utensil spatula"></div>
+        </div>
+      </div>
+      <div id="message"></div>
+      <form id="registerForm">
+        <h2>Register</h2>
+        <label for="registerName">Name:</label>
+        <input type="text" id="registerName" placeholder="Your name here..." />
+        <label for="registerUsername">Username:</label>
+        <input
+          type="text"
+          id="registerUsername"
+          placeholder="Username here..."
+        />
+        <label for="registerPassword">Password:</label>
+        <input
+          type="password"
+          id="registerPassword"
+          placeholder="Password here..."
+        />
+        <button type="submit" class="form-button">Register</button>
+        <div class="login-link">
+          <span>Already have an account?</span>
+          <button type="button" id="showLoginForm" class="link-button">
+            Login
+          </button>
+        </div>
+      </form>
+      <form id="loginForm" style="display: none">
+        <h2>Login</h2>
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" placeholder="Username here..." />
+        <label for="loginPassword">Password:</label>
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Password here..."
+        />
+        <button type="submit" class="form-button">Login</button>
+        <div class="login-link">
+          <span>Don't have an account?</span>
+          <button type="button" id="showRegisterForm" class="link-button">
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Script -->
+    <script src="js/form.js"></script>
+  </body>
+</html>

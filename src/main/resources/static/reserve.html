@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/reserve.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Smoki' BBQ Reservation</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-box">
+        <nav class="horizontal-nav">
+          <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/menu.html">MENU</a></li>
+            <li><a href="/reserve.html">RESERVATION</a></li>
+            <li><a href="/about.html">ABOUT US</a></li>
+          </ul>
+        </nav>
+        <h1 class="main-header">Smoki' BBQ</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="reservation-section">
+        <h1 class="reserv">RESERVATION</h1>
+        <form action="#" id="reservation-form">
+          <fieldset>
+            <label for="date"
+              >Date
+              <input id="date" type="date" required />
+            </label>
+            <label for="guest"
+              >Guest
+              <input id="guest" type="number" min="1" required />
+            </label>
+            <label for="time"
+              >Time
+              <input id="time" type="time" required />
+            </label>
+          </fieldset>
+          <input class="submit-btn" type="submit" value="Submit" />
+          <div id="confirmation-message">Your reservation is confirmed!</div>
+        </form>
+      </section>
+
+      <button onclick="toggleChatOverlay()" class="chat-button">
+        Open Chat
+      </button>
+      <div id="chat-overlay" class="chat-overlay">
+        <div class="chat-container">
+          <button class="close-button" onclick="toggleChatOverlay()">
+            <span>&times;</span>
+          </button>
+          <div class="chat-box" id="chat-box"></div>
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Type your message..."
+          />
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <h3 class="footer-head">Smoki' BBQ</h3>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/menu.html">MENU</a></li>
+            <li><a href="/reserve.html">RESERVATION</a></li>
+            <li><a href="/about.html">ABOUT US</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <title>Smoki' BBQ Home</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-box">
+        <nav class="horizontal-nav">
+          <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/menu.html">MENU</a></li>
+            <li><a href="/reserve.html">RESERVATION</a></li>
+            <li><a href="/about.html">ABOUT US</a></li>
+          </ul>
+        </nav>
+        <h1 class="main-header">Smoki' BBQ</h1>
+        <a
+          href="/createAcc.html"
+          id="login-link"
+          target="_blank"
+          class="login-button"
+          >Login</a
+        >
+        <a href="#" id="logout-link" class="logout-button">Logout</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img
+          src="/img/restaurant.jpg"
+          alt="Restaurant exterior"
+          class="hero-image"
+        />
+      </section>
+
+      <section class="welcome-section">
+        <div class="welcome">
+          <p class="welcome-para">
+            Welcome to Smoki' BBQ, where every bite is a journey through the
+            heart of barbecue tradition. Savor the smoky goodness of our
+            handcrafted meats and experience the true taste of BBQ excellence.
+          </p>
+        </div>
+        <img
+          src="/img/restaurant2.jpg"
+          alt="Restaurant interior"
+          class="welcome-image"
+        />
+      </section>
+
+      <section class="hours-location">
+        <div class="opening-hours">
+          <h2 class="section-title">Opening Hours</h2>
+          <div class="hours">
+            <div class="meal-time">
+              <h3>Lunch</h3>
+              <p>Monday to Friday, 12:00 - 3:00 p.m</p>
+              <p>Weekend, 11:30 - 2:30 p.m</p>
+            </div>
+            <div class="meal-time">
+              <h3>Dinner</h3>
+              <p>Monday to Friday, 6:00 - 10:00 p.m</p>
+              <p>Weekend, 5:00 - 11:00 p.m</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="address">
+          <h2 class="section-title">Our Location</h2>
+          <p>Smoki' BBQ</p>
+          <p>123 Hickory Lane</p>
+          <p>Sizzle Town, BBQville</p>
+          <p>Smokehouse County, Grillsylvania</p>
+          <p>BBQ1234</p>
+        </div>
+      </section>
+
+      <!-- Add a button to open the chat -->
+      <button onclick="toggleChatOverlay()" class="chat-button">
+        Open Chat
+      </button>
+
+      <!-- Include chat overlay -->
+      <div id="chat-overlay" class="chat-overlay">
+        <div class="chat-container">
+          <button class="close-button" onclick="toggleChatOverlay()">
+            &times;
+          </button>
+          <div class="chat-box" id="chat-box"></div>
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Type your message..."
+          />
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <h3 class="footer-head">Smoki' BBQ</h3>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/menu.html">MENU</a></li>
+            <li><a href="/reserve.html">RESERVATION</a></li>
+            <li><a href="/about.html">ABOUT US</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Include JavaScript for chat -->
+    <script src="/js/home.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/home.js"></script>
+  </body>
+</html>

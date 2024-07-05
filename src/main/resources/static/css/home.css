@@ -1,0 +1,357 @@
+/* General Styles */
+body {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+.header-box {
+  background-color: rgb(38, 90, 91);
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.horizontal-nav {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.horizontal-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.horizontal-nav ul li a {
+  color: rgb(168, 202, 204);
+  font-size: 18px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+nav.horizontal-nav a:hover,
+nav.horizontal-nav a:active {
+  color: rgb(255, 255, 242);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-header {
+  font-size: 4em;
+  font-family: "Anton", sans-serif;
+  padding: 1.5em;
+}
+
+/* Hero Section Styles */
+.hero {
+  margin-top: 20px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Welcome Section Styles */
+.welcome-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.welcome {
+  max-width: 600px;
+  margin: 20px;
+}
+
+.welcome-para {
+  font-size: 1.2em;
+  color: #333;
+  line-height: 1.6;
+}
+
+.welcome-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hours and Location Section Styles */
+.hours-location {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.opening-hours,
+.address {
+  max-width: 400px;
+  margin: 20px;
+}
+
+.section-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: rgb(38, 90, 91);
+}
+
+.hours {
+  text-align: left;
+}
+
+.meal-time h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: rgb(38, 90, 91);
+}
+
+.address p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: rgb(38, 90, 91);
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 4px solid #ff5733; /* Adding a border-top for a pop of color */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-head {
+  margin: 0;
+  font-size: 2.5em;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-right: 3rem;
+}
+
+.footer-nav ul {
+  padding: 0;
+  margin: 15px 0 0 0;
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav ul li {
+  display: inline;
+}
+
+.footer-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-nav ul li a:hover,
+.footer-nav ul li a:active {
+  color: #ff5733; /* Change to a highlight color on hover */
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+/* Login and Logout Button Styles */
+.login-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(45deg, #56ccf2, #2f80ed);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.login-button:hover {
+  background: linear-gradient(45deg, #2f80ed, #56ccf2);
+  transform: scale(1.1);
+}
+
+.logout-button {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 100px;
+  background: linear-gradient(45deg, #ff6347, #ff8967);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.logout-button:hover {
+  background: linear-gradient(45deg, #ff8967, #ff6347);
+  transform: scale(1.1);
+}
+
+/* Chat Styles */
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(
+    45deg,
+    #56ccf2,
+    #2f80ed
+  ); /* Gradient blue color */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.chat-button:hover {
+  transform: scale(1.1);
+}
+
+.chat-overlay {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.close-button {
+  align-self: flex-end;
+  margin: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  border-top: 1px solid #ccc;
+}
+
+.message {
+  margin: 5px 0;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.message.you {
+  background-color: #d1ffd6;
+  align-self: flex-end;
+  color: #333;
+}
+
+.message.ai {
+  background-color: #e6e6ff;
+  align-self: flex-start;
+  color: #333;
+}
+#user-input {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+#user-input:focus {
+  outline: none;
+  border-color: #56ccf2; /* Updated focus color to match the button */
+}
+
+button {
+  background: linear-gradient(
+    45deg,
+    #56ccf2,
+    #2f80ed
+  ); /* Gradient blue color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background 0.3s;
+  margin: 10px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #2f80ed, #56ccf2);
+}

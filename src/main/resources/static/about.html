@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Smoki' BBQ About Us</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-box">
+        <nav class="horizontal-nav">
+          <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/menu.html">MENU</a></li>
+            <li><a href="/reserve.html">RESERVATION</a></li>
+            <li><a href="/about.html">ABOUT US</a></li>
+          </ul>
+        </nav>
+        <h1 class="main-header">Smoki' BBQ</h1>
+      </div>
+    </header>
+    <article>
+      <div class="about">
+        <h2 class="about-us">About Us</h2>
+        <p class="about-para">
+          At Smoki' BBQ, we're more than just a restaurant, we're a celebration
+          of all things smoky, savory, and satisfying. Located on the vibrant
+          streets of BBQville, our eatery is a haven for those craving the
+          ultimate BBQ experience. Our chefs, true masters of the grill, work
+          tirelessly to bring you the most succulent meats infused with layers
+          of flavor from our signature rubs and sauces. Whether you're indulging
+          in our fall-off-the-bone ribs, savoring our tender pulled pork, or
+          relishing our melt-in-your-mouth brisket, each bite tells a story of
+          dedication and passion for the craft. With a welcoming atmosphere and
+          dishes that speak to the soul, Smoki' BBQ invites you to join us for a
+          feast that's sure to leave you craving more.
+        </p>
+      </div>
+    </article>
+    <div class="img">
+      <img src="/img/bq.jpg" alt="BBQ Image" />
+    </div>
+
+    <button onclick="toggleChatOverlay()" class="chat-button">Open Chat</button>
+    <div id="chat-overlay" class="chat-overlay">
+      <div class="chat-container">
+        <button class="close-button" onclick="toggleChatOverlay()">
+          <span>&times;</span>
+        </button>
+        <div class="chat-box" id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer">
+        <h3 class="footer-head">Smoki' BBQ</h3>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/menu.html">MENU</a></li>
+            <li><a href="/reserve.html">RESERVATION</a></li>
+            <li><a href="/about.html">ABOUT US</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

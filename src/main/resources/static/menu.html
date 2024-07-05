@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/order.css" />
+    <title>Smoki' BBQ Menu</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-box">
+        <nav class="horizontal-nav">
+          <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/menu.html">MENU</a></li>
+            <li><a href="/reserve.html">RESERVATION</a></li>
+            <li><a href="/about.html">ABOUT US</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1 class="hero-title">Savor the Ultimate BBQ Experience</h1>
+          <p class="hero-description">
+            Discover the bold flavors and rich traditions of Texas BBQ. Our
+            dishes are crafted with passion, using time-honored techniques and
+            the finest ingredients to deliver an unparalleled BBQ experience.
+          </p>
+          <button class="order-button">Order Now</button>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="intro">
+        <div class="intro-content">
+          <div class="text-content">
+            <p class="menu-para">
+              Dive into our menu and uncover a symphony of bold, authentic
+              flavors that celebrate the rich tradition of Texas BBQ. From
+              perfectly smoked ribs and juicy pulled pork to our renowned BBQ
+              platters, each dish is a testament to our dedication to
+              excellence, ensuring an unforgettable culinary journey that will
+              have you coming back for more.
+            </p>
+            <p class="menu-para">
+              Enjoy our exquisite BBQ dinner plates, featuring the finest cuts
+              of meat, smoked to perfection and served with a selection of
+              delicious sides. Our dedication to quality ensures every bite is a
+              flavorful experience.
+            </p>
+          </div>
+          <div class="image-content">
+            <img
+              class="dinner-img"
+              src="/img/dinner.jpg"
+              alt="A delectable BBQ dinner plate"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section">
+        <div class="menu-category" id="lunch-menu">
+          <h2 class="menu-title">Lunch</h2>
+          <ul class="menu-items">
+            <!-- Menu items will be dynamically inserted here -->
+          </ul>
+        </div>
+
+        <div class="menu-category" id="dinner-menu">
+          <h2 class="menu-title">Dinner</h2>
+          <ul class="menu-items">
+            <!-- Menu items will be dynamically inserted here -->
+          </ul>
+        </div>
+      </section>
+
+      <section id="project">
+        <h1 class="title">Our Signature Dishes</h1>
+        <div class="project-container">
+          <div class="project-card">
+            <img
+              src="/img/lunch.jpg"
+              alt="Project 1 Image"
+              class="project-img"
+            />
+            <div class="overlay">
+              <div class="food-info">
+                <p class="food-name">Classic Texas Burger</p>
+                <p class="food-price">$15.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="cart-alert">Item added to cart!</div>
+          </div>
+          <div class="project-card">
+            <img src="/img/ske.jpg" alt="Project 2 Image" class="project-img" />
+            <div class="overlay">
+              <div class="food-info">
+                <p class="food-name">Texas Skewer Delight</p>
+                <p class="food-price">$19.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="cart-alert">Item added to cart!</div>
+          </div>
+          <div class="project-card">
+            <img
+              src="/img/dish.jpg"
+              alt="Project 3 Image"
+              class="project-img"
+            />
+            <div class="overlay">
+              <div class="food-info">
+                <p class="food-name">Succulent Ribs</p>
+                <p class="food-price">$22.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="cart-alert">Item added to cart!</div>
+          </div>
+          <div class="project-card">
+            <img
+              src="/img/dish1.jpg"
+              alt="Project 4 Image"
+              class="project-img"
+            />
+            <div class="overlay">
+              <div class="food-info">
+                <p class="food-name">Grilled Corn</p>
+                <p class="food-price">$8.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="cart-alert">Item added to cart!</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Cart Icon -->
+    <div
+      class="cart-icon"
+      onclick="toggleCart()"
+      onmouseover="showCartSummary()"
+      onmouseout="hideCartSummary()"
+    >
+      <i class="fa fa-shopping-cart"></i>
+      <span class="cart-count">0</span>
+      <div id="cart-summary-tooltip" class="cart-summary-tooltip"></div>
+    </div>
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+      <div class="cart-modal-content">
+        <span class="close" onclick="toggleCart()">&times;</span>
+        <h2>Your Cart</h2>
+        <ul id="cart-items" class="cart-items"></ul>
+        <div>
+          <input type="checkbox" id="delivery-checkbox" />
+          <label for="delivery-checkbox">Deliver to an address</label>
+          <input
+            type="text"
+            id="delivery-address"
+            placeholder="Enter delivery address"
+            style="display: none; width: 100%; margin-top: 10px"
+          />
+        </div>
+        <button class="place-order-button" onclick="getCartSummary()">
+          Place Order
+        </button>
+        <button class="clear-cart-button" onclick="clearCart()">
+          Clear Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Clear Cart Confirmation Modal -->
+    <div id="clear-cart-modal" class="confirmation-modal">
+      <div class="modal-content">
+        <span class="close" onclick="toggleClearCartModal()">&times; </span>
+        <p>Are you sure you want to clear the cart?</p>
+        <button onclick="confirmClearCart()">Yes</button>
+        <button onclick="toggleClearCartModal()">No</button>
+      </div>
+    </div>
+
+    <!-- Add a button to open the chat -->
+    <button onclick="toggleChatOverlay()" class="chat-button">Open Chat</button>
+
+    <!-- Include chat overlay -->
+    <div id="chat-overlay" class="chat-overlay">
+      <div class="chat-container">
+        <button class="close-button" onclick="toggleChatOverlay()">
+          <span>&times;</span>
+        </button>
+        <div class="chat-box" id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer">
+        <h3 class="footer-head">Smoki' BBQ</h3>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/menu.html">MENU</a></li>
+            <li><a href="/reserve.html">RESERVATION</a></li>
+            <li><a href="/about.html">ABOUT US</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script src="js/public/js/menusql.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/order.js"></script>
+  </body>
+</html>

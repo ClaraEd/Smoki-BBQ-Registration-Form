@@ -150,6 +150,17 @@
         </div>
       </section>
     </main>
+
+    <!-- Menu Item Popup -->
+    <div id="menu-item-popup" class="menu-item-popup">
+      <div class="popup-content">
+        <span class="close-button" onclick="closeMenuItemPopup()">&times;</span>
+        <img src="" alt="Menu Item Image" />
+        <h2 class="popup-title"></h2>
+        <p class="popup-price"></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
     <!-- Cart Icon -->
     <div
       class="cart-icon"
@@ -189,7 +200,7 @@
     <!-- Clear Cart Confirmation Modal -->
     <div id="clear-cart-modal" class="confirmation-modal">
       <div class="modal-content">
-        <span class="close" onclick="toggleClearCartModal()">&times; </span>
+        <span class="close" onclick="toggleClearCartModal()">&times;</span>
         <p>Are you sure you want to clear the cart?</p>
         <button onclick="confirmClearCart()">Yes</button>
         <button onclick="toggleClearCartModal()">No</button>

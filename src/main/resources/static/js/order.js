@@ -8,26 +8,30 @@ document.addEventListener("DOMContentLoaded", () => {
     cartItems = JSON.parse(savedCart);
     updateCart();
   }
-});
 
-// Event listener for Add to Cart buttons
-document.querySelectorAll(".add-to-cart").forEach((button) => {
-  button.addEventListener("click", () => {
-    const card = button.closest(".project-card");
-    const alert = card.querySelector(".cart-alert");
-    const itemName = card.querySelector(".food-name").innerText;
-    const itemPrice = parseFloat(
-      card.querySelector(".food-price").innerText.replace("$", "")
-    );
+  // Call the function for lunch and dinner menus
+  createMenuItems(lunchMenuItems, "lunch-menu");
+  createMenuItems(dinnerMenuItems, "dinner-menu");
 
-    // Add item to cart with quantity 1 initially
-    addToCart(itemName, itemPrice, 1);
+  // Add event listeners for the "Add to Cart" buttons in signature dishes
+  document.querySelectorAll(".add-to-cart").forEach((button) => {
+    button.addEventListener("click", () => {
+      const card = button.closest(".project-card");
+      const alert = card.querySelector(".cart-alert");
+      const itemName = card.querySelector(".food-name").innerText;
+      const itemPrice = parseFloat(
+        card.querySelector(".food-price").innerText.replace("$", "")
+      );
 
-    // Display the alert
-    card.classList.add("show-alert");
-    setTimeout(() => {
-      card.classList.remove("show-alert");
-    }, 2000); // Adjust the duration as needed
+      // Add item to cart with quantity 1 initially
+      addToCart(itemName, itemPrice, 1);
+
+      // Display the alert
+      card.classList.add("show-alert");
+      setTimeout(() => {
+        card.classList.remove("show-alert");
+      }, 2000); // Adjust the duration as needed
+    });
   });
 });
 
@@ -99,25 +103,10 @@ function toggleCart() {
     cartModal.style.display === "block" ? "none" : "block";
 }
 
-// Remove item from cart with confirmation modal
+// Remove item from cart
 function removeFromCart(index) {
-  const item = cartItems[index];
-  // Use the existing clear cart modal for confirmation
-  document.getElementById("clear-cart-modal").style.display = "block";
-
-  const yesButton = document.querySelector(
-    "#clear-cart-modal button:first-child"
-  );
-  yesButton.onclick = () => {
-    cartItems.splice(index, 1);
-    updateCart();
-    toggleClearCartModal();
-  };
-
-  const noButton = document.querySelector(
-    "#clear-cart-modal button:last-child"
-  );
-  noButton.onclick = toggleClearCartModal;
+  cartItems.splice(index, 1);
+  updateCart();
 }
 
 // Add event listener to Order Now button
@@ -246,17 +235,6 @@ function hideCartSummary() {
   const cartSummaryTooltip = document.getElementById("cart-summary-tooltip");
   cartSummaryTooltip.style.display = "none";
 }
-// Function to check if an element is in the viewport
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
 
 // Function to check if an element is in the viewport
 function isElementInViewport(el) {
@@ -283,30 +261,54 @@ document.addEventListener("scroll", () => {
 });
 
 const lunchMenuItems = [
-  { name: "Perfect Smoked Pork Ribs", image: "/img/pork_ribs.jpg" },
-  { name: "Burnt Ends with Bourbon Sauce", image: "/img/burnt_ends.jpg" },
+  {
+    name: "Perfect Smoked Pork Ribs",
+    image: "/img/pork_ribs.jpg",
+    price: 12.99,
+  },
+  {
+    name: "Burnt Ends with Bourbon Sauce",
+    image: "/img/burnt_ends.jpg",
+    price: 13.99,
+  },
   {
     name: "Apple-Glazed Barbecued Baby Back Ribs",
     image: "/img/baby_back_ribs.jpg",
+    price: 14.99,
   },
-  { name: "Robb Walsh's Texas Barbecue Brisket", image: "/img/brisket.jpg" },
-  { name: "Sticky Barbecued Beef Ribs", image: "/img/beef_ribs.jpg" },
+  {
+    name: "Robb Walsh's Texas Barbecue Brisket",
+    image: "/img/brisket.jpg",
+    price: 15.99,
+  },
+  {
+    name: "Sticky Barbecued Beef Ribs",
+    image: "/img/beef_ribs.jpg",
+    price: 16.99,
+  },
 ];
 
 const dinnerMenuItems = [
-  { name: "Smoked Brisket", image: "/img/smoked_brisket.jpg" },
-  { name: "Red Wine Barbecue Chicken", image: "/img/red_wine_chicken.jpg" },
+  { name: "Smoked Brisket", image: "/img/smoked_brisket.jpg", price: 17.99 },
+  {
+    name: "Red Wine Barbecue Chicken",
+    image: "/img/red_wine_chicken.jpg",
+    price: 18.99,
+  },
   {
     name: "Grilled Chicken with Sweet Mustard Barbecue Sauce",
     image: "/img/grilled_chicken.jpg",
+    price: 19.99,
   },
   {
     name: "Barbecued Brisket and Burnt Ends",
     image: "/img/brisket_burnt_ends.jpg",
+    price: 20.99,
   },
   {
     name: "Big Bob Gibson's Chicken with White Barbecue Sauce",
     image: "/img/gibson_chicken.jpg",
+    price: 21.99,
   },
 ];
 
@@ -319,9 +321,28 @@ function createMenuItems(menuItems, containerId) {
     li.innerHTML = `
       <img src="${item.image}" alt="${item.name}" class="menu-item-img" />
       <span>${item.name}</span>
+      <button class="menu-item-plus" onclick="showItemDetails('${item.name}', ${item.price}, '${item.image}')">+</button>
     `;
     ul.appendChild(li);
   });
+}
+
+// Show menu item popup
+function showItemDetails(name, price, image) {
+  const popup = document.getElementById("menu-item-popup");
+  popup.querySelector("img").src = image;
+  popup.querySelector(".popup-title").innerText = name;
+  popup.querySelector(".popup-price").innerText = `Price: $${price.toFixed(2)}`;
+  popup.querySelector(".add-to-cart").onclick = () => {
+    addToCart(name, price, 1);
+    closeMenuItemPopup();
+  };
+  popup.style.display = "block";
+}
+
+// Close menu item popup
+function closeMenuItemPopup() {
+  document.getElementById("menu-item-popup").style.display = "none";
 }
 
 // Call the function for lunch and dinner menus

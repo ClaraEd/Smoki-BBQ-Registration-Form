@@ -758,3 +758,90 @@ nav.horizontal-nav a:active {
 .project-container.scroll-animate {
   animation: subtleScroll 2s ease-in-out;
 }
+
+/* Menu Item Popup */
+.menu-items li {
+  display: flex; /* Add this to align image and text horizontally */
+  align-items: center; /* Center image and text vertically */
+  justify-content: space-between; /* Add this to space out the elements */
+}
+
+/* Plus button styling */
+.menu-item-plus {
+  background: #56ccf2;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  /* border-radius: 50%; */
+  margin-left: auto;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.menu-item-plus:hover {
+  background: #2f80ed;
+  transform: scale(1.1);
+}
+
+/* Menu Item Popup */
+.menu-item-popup {
+  display: none;
+  position: fixed;
+  z-index: 1002;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.menu-item-popup img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-item-popup .popup-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #264c5b;
+  font-family: "Anton", sans-serif;
+}
+
+.menu-item-popup .popup-price {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.menu-item-popup .add-to-cart,
+.menu-item-popup .close-button {
+  background: #56ccf2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.menu-item-popup .add-to-cart:hover,
+.menu-item-popup .close-button:hover {
+  background: #2f80ed;
+  transform: scale(1.05);
+}
+
+.menu-item-popup .close-button {
+  background: #ff7f50;
+}
+
+.menu-item-popup .close-button:hover {
+  background: #ff6347;
+}
